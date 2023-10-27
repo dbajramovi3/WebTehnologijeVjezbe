@@ -1,0 +1,16 @@
+@import url(http://fonts.googleapis.com/css?family=Gabriela);
+body{
+    background-color: #a7a09a;
+}
+h1{
+    color: green;
+    font-size: 42pt;
+    background-color: #a7a09a;
+    font-family: 'Gabriela';
+    margin: 0;
+    padding: 0px;
+}
+
+
+
+
