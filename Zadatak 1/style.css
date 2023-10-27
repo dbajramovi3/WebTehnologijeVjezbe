@@ -1,0 +1,19 @@
+body{
+    background-color: aqua;
+}
+h1{
+    text-align: center;
+}
+
+#p1{
+    margin: 0;
+}
+
+#p2{
+    padding-left: 80px;
+}
+
+img{
+    float: left;
+    padding-top: 15px;
+}
