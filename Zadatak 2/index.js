@@ -1,4 +1,3 @@
-function generateMultiplicationTable() {
     let tableHtml = '<table>';
     for (let i = 0; i <= 10; i++) {
       tableHtml += '<tr>';
@@ -17,8 +16,7 @@ function generateMultiplicationTable() {
     }
     tableHtml += '</table>';
   
-    const tableContainer = document.getElementById('multiplicationTable');
-    tableContainer.innerHTML = tableHtml;
-  }
+    const tabelaDiv = document.getElementById('tabela');
+    tabelaDiv.innerHTML = tableHtml;
+ 
   
-  generateMultiplicationTable();
