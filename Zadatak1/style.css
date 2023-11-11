@@ -1,0 +1,13 @@
+.drvo {
+    font-family: Arial, sans-serif;
+}
+
+.node {
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.sub-drvo {
+    display: none;
+    margin-left: 20px;
+}
