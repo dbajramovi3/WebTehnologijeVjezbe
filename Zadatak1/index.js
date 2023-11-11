@@ -1,11 +1,11 @@
 function toggle(node) {
-    const subTree = node.nextElementSibling;
+    const subDrvo = node.nextElementSibling;
 
-    if (subTree.style.display === 'none' || subTree.style.display === '') {
-        subTree.style.display = 'block';
+    if (subDrvo.style.display == 'none' || subDrvo.style.display == '') {
+        subDrvo.style.display = 'block';
         node.innerHTML = node.innerHTML.replace('+', '-');
     } else {
-        subTree.style.display = 'none';
+        subDrvo.style.display = 'none';
         node.innerHTML = node.innerHTML.replace('-', '+');
     }
 }
