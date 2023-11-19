@@ -1,0 +1,39 @@
+Otvorili smo stranicu c2.etf.unsa.ba
+usli smo na stranicu, pritisnuli desni klik i isli na inspect elements
+polije toga smo otisli na network u developer tools, pa refreshali stranicu
+Sadrzaj trazenog:
+Name: www.etf.unsa.ba
+Status: 200
+Type: document
+Initiator: other
+Size: 320kB
+Time: 131ms
+Imamo jos i waterfall koji pokazuje dosta informacija.
+Waterfall: Request sent, duration: 0.93ms
+	   Waiting for server response, duration 19.37ms
+	   Content Download, duration 106.12ms
+	   Connection Start: 
+	   Stalled, duration 4.83ms
+	   Resource Scheduling: 
+	   Queueing, duration 1.94ms
+	   Znaci queue: 0, started at 1.94ms
+
+
+Slika Sarajevo_0bc4866169.jpg: 
+curl 'https://res.cloudinary.com/etf/image/upload/v1662453255/Sarajevo_0bc4866169.jpg' \
+  -H 'sec-ch-ua: "Google Chrome";v="119", "Chromium";v="119", "Not?A_Brand";v="24"' \
+  -H 'Referer: https://www.etf.unsa.ba/' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  --compressed
+
+
+ZAGLAVLJE O WEB PRETRAZIVACU:
+
+-H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
+Ova linija ukazuje na to da se koristi preglednik koji ima User-Agent string s informacijama o tome da se koristi preglednik Chrome (verzija 119.0.0.0) na operativnom sistemu Windows 10.
+
+
+UKUPAN BROJZAHTJEVA:
+94 requests
