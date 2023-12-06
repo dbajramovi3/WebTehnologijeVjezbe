@@ -1,0 +1,34 @@
+lv5 zadatak 2 izvjestaj:
+
+Zadatak 2 sam uradio na sljedeći nacin:
+	
+Prvo sam se prijavio na stranicu themoviedb.org.
+Popunio sam sve informacije i dobio sam pristup API Key koji glasi:
+d35b1d59fd63c9a74016d7db88483514
+I API read access token koji mi nije trebao:
+eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMzViMWQ1OWZkNjNjOWE3NDAxNmQ3ZGI4ODQ4MzUxNCIsInN1YiI6IjY1NmU3NjdiMDVhNTMzMDExZDRmOTk0YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ljY9_YQOKfspIkz_r9dEblmd59EjYT6CZ2WJY9MkiaI
+
+Drugi korak je bio da instaliram postmana ili da ga koristim online.
+Ja sam ga instalirao jer je lakse.
+Napravio sam novi environment i stavio naziv local.
+Unutar Collections kreirao sam novu kolekciju zvanu User API.
+Unutar nje sam napravio 2 foldera. Jedan je testni zvani user, a drugi je zadatak 2 zavni Testiranje.
+Unutar testiranja sam napravio novi Request i tako sam ga i nazvao.
+Stavio sam metodu GET i pored nje sam ukucao URL  https://api.themoviedb.org/3/search/movie sto predstavlja URL za TMDb API. Ovdje se svi API pozivi počinju.
+
+Znaci u Params sada imam key: api_key, Value: d35b1d59fd63c9a74016d7db88483514
+Zatim u Autorization sam Ukucao svoj API Key: d35b1d59fd63c9a74016d7db88483514
+I na kraju sam unutar Headera stavio key: Authorization, Value: Bearer d35b1d59fd63c9a74016d7db88483514.
+
+Sve sam to spasio i pritisnuo sam Send sa desne strane i dobio sam odgovor od servera koji glasi:
+{
+    "page": 1,
+    "results": [],
+    "total_pages": 1,
+    "total_results": 0
+}
+page: Označava trenutnu stranicu rezultata.
+results: Lista rezultata pretrage. U ovom slučaju, lista je prazna ([])
+total_pages: Ukupan broj stranica rezultata.
+total_results: Ukupan broj rezultata pretrage
+
