@@ -1,0 +1,63 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const fs = require('fs');
+
+const app = express();
+const port = 8080;
+
+app.use(bodyParser.json());
+
+// Ruta za dohvaćanje svih zadataka
+app.get('/zadaci', (req, res) => {
+    fs.readFile('zadaci.csv', 'utf8', (err, data) => {
+        if (err) {
+            res.status(500).json({ status: 'Greška prilikom čitanja datoteke.' });
+            return;
+        }
+
+        const zadaci = data.split('\n').map(line => {
+            const [id, naziv, opis] = line.split(',');
+            return { id, naziv, opis };
+        });
+
+        res.json(zadaci);
+    });
+});
+
+// Ruta za dodavanje novog zadatka
+app.post('/zadatak', (req, res) => {
+    const { id, naziv, opis } = req.body;
+
+    // Provjeri postoji li zadatak s istim ID-om
+    fs.readFile('zadaci.csv', 'utf8', (err, data) => {
+        if (err) {
+            res.status(500).json({ status: 'Greška prilikom čitanja datoteke.' });
+            return;
+        }
+
+        const zadaci = data.split('\n').map(line => {
+            const [existingId] = line.split(',');
+            return existingId;
+        });
+
+        if (zadaci.includes(id)) {
+            res.json({ status: 'Id već postoji!' });
+            return;
+        }
+
+        // Dodaj novi zadatak u datoteku
+        const novaLinija = `${id},${naziv},${opis}\n`;
+        fs.appendFile('zadaci.csv', novaLinija, (err) => {
+            if (err) {
+                res.status(500).json({ status: 'Greška prilikom dodavanja zadatka.' });
+                return;
+            }
+
+            res.json({ status: 'Zadatak je uspješno dodan!' });
+        });
+    });
+});
+
+app.listen(port, () => {
+    console.log(`Server pokrenut na portu ${port}`);
+});
