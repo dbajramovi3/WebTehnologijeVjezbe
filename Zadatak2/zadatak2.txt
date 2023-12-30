@@ -1,0 +1,13 @@
+Sto se tice ovog zadatka ja sam instalira XAMPP i pokrenuo sam apache i MySQL
+Prijavio sam se sa datim informacijama
+Napravio sam database koja se naziva "Imenik"
+Stavio sam pored da je utf8_general_ci i pritisnuo create
+Usao sam na u tu bazu i napravio sljedeci SQL Upit kako bi stvorio tabelu:
+
+CREATE TABLE imenik (
+  ime_prezime varchar(30),
+  adresa varchar(30),
+  broj_telefona varchar(20)
+);
+
+Pritisnuo Go i tako sam zavrsio ovaj zadatak
